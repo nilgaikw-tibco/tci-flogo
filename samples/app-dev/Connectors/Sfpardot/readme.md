@@ -3,10 +3,10 @@
 
 ## Description
 
-This example demonstrate how we can create single record, fetch it using query, update and delete that record in SFPardot using SFPardot activities and connection in flogo.
-The main purpose of SFPardot activities used in the SFPardot_General_Sample app are to insert new account, fetch the details of the created account, update the data for that account and then delete accountfrom SFPardot. Also receives messages whenever a change occurs in SFPardot.com and activates the flow using SFPardot trigger.
+This example demonstrate how we can create single record, fetch it using query, update that record in SFPardot using SFPardot activities and connection in flogo.
+The main purpose of SFPardot activities used in the SFPardot_General_Sample app are to insert new Campaign, fetch the details of the created Campaign, update the data for that Campaign and then return the updated output. Also activates the flow using REST trigger.
 
-The CRUD flow in the SFPardot_General_Sample app basically creates new record for Account object in SFPardot and then fetch that record details using query. Then it updates the name of the newly created account. Finally deletes that account. All these operation will be done when execute the REST trigger with valid input schema provided in ReceiveHTTPMessage trigger.
+The CRUD flow in the SFPardot_General_Sample app basically creates new record for Campaign object in SFPardot and then fetch that record details using query. Then it updates the name of the newly created campaign. All these operation will be done when execute the REST trigger.
 
 
 ## Prerequisites
@@ -49,7 +49,7 @@ Note: After imported an app, in the imported connection under Connection tab,
 * Client secret is blank and you have to provide the Consumer Secret in the SFPardot Account (get it from the Connected Apps section in SFPardot Account).
 * For Business Unit Id, you have to take it from SFPardot Account under Pardot account setup.
 
-Once you provide the values then login to your SFPardot account and it will redirect to Salesforce login page. you have to login with valid salesforce credentils.
+Once you provide the values then login to your SFPardot account and it will redirect to Salesforce login page. you have to login with valid salesforce credentils. And then allows it,so your SFPardot connection will be established.
 
 ![The connection](../../import-screenshots/sfpardot_screenshots/SFPardotLogin.png)
 
@@ -57,9 +57,8 @@ Once you provide the values then login to your SFPardot account and it will redi
 If you open the app, you will see there is one flows in the SFPardot_General_Sample app. The flow 'CRUD' on Campaign object.
 ![The Flows](../../import-screenshots/sfpardot_screenshots/CRUDFlow.png)
 
-The CRUD flow in the SFPardot_General_Sample app basically creates new record for Campaign object in SFPardot using SFPardotCreate activity and then fetch that record details using SFPardotQuery activity. Then it updates the name of the newly created account using SFPardotUpdate activity. Finally deletes that account using SFPardotDelete activity. All these operation will be done when execute the REST trigger with valid input schema provided in ReceiveHTTPMessage trigger. REST trigger have method POST with path parameter 'account'.
+The CRUD flow in the SFPardot_General_Sample app basically creates new record for Campaign object in SFPardot using SFPardotCreate activity and then fetch that record details using SFPardotQuery activity. Then it updates the name of the newly created Campaign using SFPardotUpdate activity. Finally returns that updated campaign using return activity. All these operation will be done when execute the REST trigger which have GET method.
 ![The CRUD Flows](../../import-screenshots/sfpardot_screenshots/CRUDFlowactivities.png)
-
 
 
 ### Run the application
@@ -74,7 +73,7 @@ Now click Execute button.
 ![Runtime Execution](../../import-screenshots/sfpardot_screenshots/RESTRequest.png)
 
 If you want to test the sample in the Flow tester then follow below instructions:
-Click on the MainFlowWithSFCreateCheckStatusJob flow, click on Test Button -> create Launch configuration -> provide request schema in body parameter -> click Next button -> click on Run
+Click on the MainFlow, click on Test Button -> create Launch configuration -> provide request schema in body parameter(if any) -> click Next button -> click on Run
 ![FlowTester](../../import-screenshots/sfpardot_screenshots/Flowtester.png)
 
 ## Outputs
