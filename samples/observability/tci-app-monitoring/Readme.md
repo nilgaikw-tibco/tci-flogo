@@ -6,7 +6,7 @@ Each region has its own API URL and more information can be found in the [produc
 
 # <span style="text-decoration:underline;">Use-cases</span> 
 
-The current solution demonstrates the below 03 monitoring use-cases.
+The current solution demonstrates the below three monitoring use-cases.
 
 1. Email alerts based on Status of Apps. (Stopped & Error states)
 2. Email alerts based on Faulted instances. 
@@ -18,7 +18,7 @@ The current solution demonstrates the below 03 monitoring use-cases.
 * PostgreSQL DB instance (_optional_)
 * Valid subscription to TIBCO Cloud Spotfire (_optional for visualization purpose_)
 
-This solution is built using TIBCO Cloud™ Integration - Flogo® and leverages platform APIs to monitor TCI applications.
+This solution is built using TIBCO Cloud™ Integration - Develop (Flogo) and leverages TCI Platform APIs to monitor TCI applications.
 
 # <span style="text-decoration:underline;">Solution Description</span>
 
@@ -46,11 +46,17 @@ Minimum active app instances should be at least 01.
 # Additional Notes: 
 
 - Allows users to set SubscriptionLocator and OAuth token - enables them to monitor the apps deployed in any organization. 
+- Steps to get the OAuth token is [here.](https://integration.cloud.tibco.com/docs/Subsystems/tci-api/getstarted/basics/authentication.html)
+- Steps to enable the API access is [here.](https://integration.cloud.tibco.com/docs/Subsystems/tci-api/getstarted/basics/enable-api-access.html)
 - Alerts are email notifications and can be customized to any other alerts. 
 - API leveraged to Get Apps from Organization --> /v1/subscriptions/{subscriptionLocator}/apps
 - API leveraged to Get App Status --> /v1/subscriptions/{subscriptionLocator}/apps/{appId}/status
 - API leveraged to Get App Instance metrics --> /v1/subscriptions/{subscriptionLocator}/apps/{appId}/monitoring/metrics/resource
 - API leveraged to Scale an app --> /v1/subscriptions/{subscriptionLocator}/apps/{appId}/scale
+
+# Demo 
+
+https://user-images.githubusercontent.com/17696107/129003005-1c0033a6-99e0-4625-91ee-b4da09d0a92e.mp4
 
 # Solution Architecture
 
@@ -59,12 +65,12 @@ Minimum active app instances should be at least 01.
 # Solution Setup
 This solution contains the following components:
 
-- TIBCO Cloud Integration - Flogo artifacts - ApplicationWatcher_Alerts & ApplicationWatcher_SubscriberApp applications. 
+- TIBCO Cloud Integration - Develop (Flogo) applications: ApplicationWatcher_Alerts & ApplicationWatcher_SubscriberApp. 
 - TIBCO Cloud Spotfire artifacts - AppStatus-dashboard. 
 
 # Steps to setup Flogo apps
 
-1. Download MonitoringTCIApps.zip file, unzip it in /tmp/ directory. 
+1. Download [TCI-Monitoring-Solution.zip file](https://github.com/TIBCOSoftware/tci-flogo/blob/master/samples/observability/tci-app-monitoring/TCI-Monitoring-Solution.zip), unzip it in /tmp/ directory. 
 2. Flogo applications are under /src/flogo/ 
     * ApplicationWatcher_Alerts.json
     * ApplicationWatcher_SubscriberApp.json
@@ -79,7 +85,7 @@ This solution contains the following components:
 10. If a trigger in the previous dialog is not selected, the flows associated with that trigger are displayed. Users have an option to select one or more of these flows such that the flows get imported as blank flows that are not attached to any trigger. By default, all flows are selected. Uncheck the check box for the flows that you do not want to import. If your flow(s) have subflows, and you select only the main flow but do not select the subflow, the main flow gets imported without the subflow.
 11. Once the import process is completed, you will see different flows and triggers in the application. 
 12. Validate the application to see if there are any pending validations/errors. Ensure no errors/validations, push the application (click on push) for deployment and scale up the app instance (from 0 to 1)
-13. Repeat the steps from 4 to 10 for ApplicationWatcher_SubscriberApp and ApplicationWatcher_AutoScale apps. 
+13. Repeat the steps from 4 to 12 for ApplicationWatcher_SubscriberApp and ApplicationWatcher_AutoScale apps. 
 
 # Steps to setup Spotfire Dashboard
 
@@ -100,3 +106,6 @@ This solution contains the following components:
 5. For use-case # 3, at the end of each job cycle, you will see a list of apps updated and scale action status as shown below
 
 ![image](https://user-images.githubusercontent.com/17696107/128909989-100d2ff6-ae7e-4ee5-8359-9055faf3574a.png)
+
+
+
