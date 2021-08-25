@@ -55,10 +55,10 @@ If you open the app, you will see there are three flows, one is Publisher for Qu
 The 'Publisher' flow in the AzureServiceBusPUBSUBSample app basically sends a messages over Queues and Topics. It has two publish activites for Queue and Topic respetively.All these operation will be done when execute the REST trigger with valid input schema provided in ReceiveHTTPMessage trigger. REST trigger have method POST.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/Publisherflow.png)
 
-The Queue Receiver trigger in the QueueReceiver flow subscribes a message published from Queue publish activity.To see how Will Queue Receiver work, see Azure Service Bus documentation. 
+when publisher flow sends message through a Queue then QueueReceiver trigger receive the message from respective queue. To see how Will Queue Receiver work, see Azure Service Bus documentation. 
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/QueueReceiverflow.png)
 
-The Topic Subscriber trigger in the TopicSubscriber flow subscribes a message published from Topic publish activity.To see how Will Queue Receiver work, see Azure Service Bus documentation. 
+when publisher flow sends message through a Topic then TopicSubscriber trigger receive the message from respective queue of respective subscriber.To see how Will Queue Receiver work, see Azure Service Bus documentation. 
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/TopicSubscriberflow.png)
 
 
@@ -74,7 +74,7 @@ Now click Execute button.
 
 If you want to test the sample in the Flow tester then follow below instructions:
 Click on the Publisher flow, click on Test Button -> create Launch configuration -> provide request schema in body parameter -> click Next button -> click on Run
-![FlowTester](../../import-screenshots/AzureServiceBusPUBSUBSample/Flowtester.png)
+![FlowTester](../../../import-screenshots/AzureServiceBusPUBSUBSample/Flowtester.png)
 
 ## Outputs
 
