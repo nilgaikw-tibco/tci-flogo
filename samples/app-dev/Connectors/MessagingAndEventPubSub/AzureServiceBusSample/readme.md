@@ -55,10 +55,10 @@ If you open the app, you will see there are three flows, one is Publisher for Qu
 The 'Publisher' flow in the AzureServiceBusPUBSUBSample app basically sends a messages over Queues and Topics. It has two publish activites for Queue and Topic respetively.All these operation will be done when execute the REST trigger with valid input schema provided in ReceiveHTTPMessage trigger. REST trigger have method POST.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/Publisherflow.png)
 
-when publisher flow sends message through a Queue then QueueReceiver trigger receive the message from respective queue. To see how Will Queue Receiver work, see Azure Service Bus documentation. 
+When 'Publisher' flow sends a message through a Queue then the Queue Receiver trigger receives the message from the respective queue. To see how Will Queue Receivers work, see Azure Service Bus documentation.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/QueueReceiverflow.png)
 
-when publisher flow sends message through a Topic then TopicSubscriber trigger receive the message from respective queue of respective subscriber.To see how Will Queue Receiver work, see Azure Service Bus documentation. 
+When 'Publisher' flow sends a message through a Topic, then the Topic Subscriber trigger receives the message from the topic of the respective subscriber. To see how Will Queue Receiver works, see Azure Service Bus documentation.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/TopicSubscriberflow.png)
 
 
