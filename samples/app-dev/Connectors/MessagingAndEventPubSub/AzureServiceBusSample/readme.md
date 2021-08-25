@@ -37,7 +37,7 @@ The flow in the AzureServiceBusPUBSUBSample app basically publish different type
 ## Understanding the configuration
 
 ### The Connection
-When you import this app, you need to configure the 'AzureServiceBus' connection in Connections page. It has pre-filled values for all paramaters. But if you have an app with AzureServiceBus connection having Namespace, AuthorizationRule and SharedAccessKey required to authenticate the broker then after import such apps, SharedAccessKey field will be empty as shown in below screenshot.
+When you import this app, you need to configure the 'AzureServiceBus' connection in the Connections page. It has pre-filled values for all paramaters. But if you have an app with AzureServiceBus connection having Namespace, AuthorizationRule and SharedAccessKey required to authenticate the broker then after import such apps, SharedAccessKey field will be empty as shown in below screenshot.
 
 ![The UsernamePasswordconnection](../../../import-screenshots/AzureServiceBusPUBSUBSample/ImportedAZSBConnectionBlank.png)
 
@@ -55,7 +55,7 @@ If you open the app, you will see there are three flows, one is Publisher for Qu
 The 'Publisher' flow in the AzureServiceBusPUBSUBSample app basically sends a messages over Queues and Topics. It has two publish activites for Queue and Topic respetively.All these operation will be done when execute the REST trigger with valid input schema provided in ReceiveHTTPMessage trigger. REST trigger have method POST.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/Publisherflow.png)
 
-When 'Publisher' flow sends a message through a Queue then the Queue Receiver trigger receives the message from the respective queue. To see how Will Queue Receivers work, see Azure Service Bus documentation.
+When 'Publisher' flow sends a message through a Queue, then the Queue Receiver trigger receives the message from the respective queue. To see how Will Queue Receivers work, see Azure Service Bus documentation.
 ![The AzureServiceBusPUBSUBSample Flows](../../../import-screenshots/AzureServiceBusPUBSUBSample/QueueReceiverflow.png)
 
 When 'Publisher' flow sends a message through a Topic, then the Topic Subscriber trigger receives the message from the topic of the respective subscriber. To see how Will Queue Receiver works, see Azure Service Bus documentation.
